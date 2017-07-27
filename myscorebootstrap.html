@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ScoreKeeper Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="myscorebootstrap.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo row">
+        <div class="col-xs-12">
+          <img src="books.png" alt="battle of the books logo">
+        </div>
+      </div>
+      <div class="countdown row">
+        <div class="col-xs-12">
+          <p><span id="timer">--</span></p>
+          <audio src="countdown.mp3" id="countdownClip"></audio>
+          <button class="btn btn-primary" type="button" onclick="countdown()">Start timer (starts timer and music)</button>
+        </div>
+      </div>
+      <div class="sounds row">
+        <div class="col-xs-12">
+          <audio src="correct.wav" id="rightClip"></audio>
+          <button class="btn btn-primary" type="button" id="right" onclick="rightSound()">Right Sound!</button>
+          <audio src="wrong.wav" id="wrongClip"></audio>
+          <button class="btn btn-primary" type="button" id="wrong" onclick="wrongSound()">Wrong Sound!</button>
+        </div>
+      </div>
+      <div class="team row">
+        <div class="col-xs-12">
+          <p><span id="team1display">0</span></p>
+          <input class="input" type="text">
+          <br>
+          <button class="btn btn-primary" type="button" id="1plus1">+1</button>
+          <button class="btn btn-primary" type="button" id="1plus2">+2</button>
+          <button class="btn btn-primary" type="button" id="1minus1">-1</button>
+        </div>
+      </div>
+      <div class="team row">
+        <div class="col-xs-12">
+          <p><span id="team2display">0</span></p>
+          <input class="input" type="text">
+          <br>
+          <button class="btn btn-primary" type="button" id="2plus1">+1</button>
+          <button class="btn btn-primary" type="button" id="2plus2">+2</button>
+          <button class="btn btn-primary" type="button" id="2minus1">-1</button>
+        </div>
+      </div>
+      <div class="team row">
+        <div class="col-xs-12">
+          <p><span id="team3display">0</span></p>
+          <input class="input" type="text">
+          <br>
+          <button class="btn btn-primary" type="button" id="3plus1">+1</button>
+          <button class="btn btn-primary" type="button" id="3plus2">+2</button>
+          <button class="btn btn-primary" type="button" id="3minus1">-1</button>
+        </div>
+      </div>
+      <div class="team row">
+        <div class="col-xs-12">
+          <p><span id="team4display">0</span></p>
+          <input class="input" type="text">
+          <br>
+          <button class="btn btn-primary" type="button" id="4plus1">+1</button>
+          <button class="btn btn-primary" type="button" id="4plus2">+2</button>
+          <button class="btn btn-primary" type="button" id="4minus1">-1</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="myscorebootstrap.js"></script>
+
+  </body>
+</html>
