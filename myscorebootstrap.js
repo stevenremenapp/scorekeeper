@@ -2,10 +2,10 @@
 // it must:
 // play the countdown music
 // start the countdown timer
-
-var i = 30;
+//repeat these functions over and over (i.e. var i must start at 30 every time -- place var i = 30 into the beginning of the function)
 
 function startTimer() {
+  var i = 30;
   var countdownTimer = setInterval(function() {
     document.getElementById('timer').textContent = i;
     // console.log(i);
