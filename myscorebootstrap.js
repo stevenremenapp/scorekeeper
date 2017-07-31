@@ -4,22 +4,48 @@
 // start the countdown timer
 //repeat these functions over and over (i.e. var i must start at 30 every time -- place var i = 30 into the beginning of the function)
 
-function startTimer() {
-  var i = 30;
-  var countdownTimer = setInterval(function() {
-    document.getElementById('timer').textContent = i;
-    // console.log(i);
-    i--;
-    if(i<0) {
-      clearInterval(countdownTimer);
+var myTimer;
+  function clock() {
+    document.getElementById('countdownClip').play();
+    myTimer = setInterval(myClock, 1000);
+    var i = 30;
+
+    function myClock() {
+      document.getElementById('timer').textContent = i;
+      i--;
+      if (i < -1) {
+        clearInterval(myTimer);
+        document.getElementById('timer').textContent = "--";
+      }
     }
-  }, 1000);
+  };
+
+// function startTimer() {
+  // stop(); stop was put here in an effort to override the countdown
+//   document.getElementById('countdownClip').play();
+//   var i = 30;
+//   var countdownTimer = setInterval(function() {
+//     document.getElementById('timer').textContent = i;
+//     // console.log(i);
+//     i--;
+//     if(i<0) {
+//       clearInterval(countdownTimer);
+//     }
+//   }, 1000);
+// }
+
+
+
+//stop timer and music upon button click
+
+function stop() {
+  document.getElementById('countdownClip').pause();
+  document.getElementById('countdownClip').currentTime = 0;
+  clearInterval(myTimer);
+  document.getElementById('timer').textContent = "--";
 }
 
-function countdown() {
-  document.getElementById('countdownClip').play();
-  startTimer();
-}
+
 
 // right sound
 
