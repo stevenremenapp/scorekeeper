@@ -5,7 +5,9 @@
 //repeat these functions over and over (i.e. var i must start at 30 every time -- place var i = 30 into the beginning of the function)
 
 var myTimer;
-  function clock() {
+
+function clock() {
+  if (!myTimer) {
     document.getElementById('countdownClip').play();
     myTimer = setInterval(myClock, 1000);
     var i = 30;
@@ -18,7 +20,8 @@ var myTimer;
         document.getElementById('timer').textContent = "--";
       }
     }
-  };
+  }
+};
 
 // function startTimer() {
   // stop(); stop was put here in an effort to override the countdown
@@ -42,6 +45,7 @@ function stop() {
   document.getElementById('countdownClip').pause();
   document.getElementById('countdownClip').currentTime = 0;
   clearInterval(myTimer);
+  var myTimer = false;
   document.getElementById('timer').textContent = "--";
 }
 
