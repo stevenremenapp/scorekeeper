@@ -7,7 +7,7 @@
 var myTimer;
 
 function clock() {
-  if (!myTimer) {
+    if (!myTimer) {
     document.getElementById('countdownClip').play();
     myTimer = setInterval(myClock, 1000);
     var i = 30;
@@ -18,10 +18,13 @@ function clock() {
       if (i < -1) {
         clearInterval(myTimer);
         document.getElementById('timer').textContent = "--";
+        //can't just set the var to false, have to use return
+        return myTimer = false;
       }
     }
   }
 };
+
 
 // function startTimer() {
   // stop(); stop was put here in an effort to override the countdown
@@ -45,8 +48,10 @@ function stop() {
   document.getElementById('countdownClip').pause();
   document.getElementById('countdownClip').currentTime = 0;
   clearInterval(myTimer);
-  var myTimer = false;
   document.getElementById('timer').textContent = "--";
+  //can't just set the var to false, have to use return
+  return myTimer = false;
+
 }
 
 
