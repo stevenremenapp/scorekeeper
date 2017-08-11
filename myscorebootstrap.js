@@ -49,7 +49,7 @@ function stop() {
   document.getElementById('countdownClip').currentTime = 0;
   clearInterval(myTimer);
   document.getElementById('timer').textContent = "--";
-  //can't just set the var to false, have to use return
+  //can't just set the var to false (i.e. var myTimer = false), have to use return
   return myTimer = false;
 
 }
@@ -71,19 +71,38 @@ function wrongSound() {
 
 // team 1 scoring
 
-var team1total = 0;
+//shorthand if else notation ::: var = (question) if true then first item, else second item
+//must use Number() function because you can't add 2 to a string; it literally types a 2 on the end of the retrieved number, so doing this function makes the math work
+var team1total = Number(sessionStorage.getItem('updatedTeam1Total') ? sessionStorage.getItem('updatedTeam1Total') : 0);
+document.getElementById('team1display').textContent = team1total;
 
 document.getElementById('1plus1').onclick = addOne;
 
 function addOne() {
   team1total++;
+  //create new variable that stores the current updated score
+  var updatedTeam1Total = team1total;
+  //store into local storage
+  sessionStorage.setItem('updatedTeam1Total', updatedTeam1Total);
+  //retrieves the variable from local storage
+  var updatedTeam1Total = sessionStorage.getItem('updatedTeam1Total');
+  //display score
   document.getElementById('team1display').textContent = team1total;
 }
 
 document.getElementById('1plus2').onclick = addTwo;
 
 function addTwo() {
-  team1total = team1total + 2;
+  //can't just do team1total = team1total + 2 or team1total += 2 bc the button will literally type 2 after the returned stored number
+  //this is why the Number() function must be used on the team1total above
+  team1total += 2;
+  //create new variable that stores the current updated score
+  var updatedTeam1Total = team1total;
+  //store into local storage
+  sessionStorage.setItem('updatedTeam1Total', updatedTeam1Total);
+  //retrieves the variable from local storage
+  var updatedTeam1Total = sessionStorage.getItem('updatedTeam1Total');
+  //display score
   document.getElementById('team1display').textContent = team1total;
 }
 
@@ -91,6 +110,13 @@ document.getElementById('1minus1').onclick = minusOne;
 
 function minusOne() {
   team1total--;
+  //create new variable that stores the current updated score
+  var updatedTeam1Total = team1total;
+  //store into local storage
+  sessionStorage.setItem('updatedTeam1Total', updatedTeam1Total);
+  //retrieves the variable from local storage
+  var updatedTeam1Total = sessionStorage.getItem('updatedTeam1Total');
+  //display score
   document.getElementById('team1display').textContent = team1total;
 }
 
@@ -168,3 +194,7 @@ function minusOne4() {
   team4total--;
   document.getElementById('team4display').textContent = team4total;
 }
+
+//CREATE SESSION STORAGE FOR TEAM NAMES!!!
+//MAKE A CLEAR ALL DATA BUTTON!!!
+//Add black translucent status bar for safari like this (https://www.themarketingtechnologist.co/change-your-websites-address-bar-to-your-brand-colors/)
