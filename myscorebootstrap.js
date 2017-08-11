@@ -122,19 +122,26 @@ function minusOne() {
 
 // team 2 scoring
 
-var team2total = 0;
+var team2total = Number(sessionStorage.getItem('updatedTeam2Total') ? sessionStorage.getItem('updatedTeam2Total') : 0);
+document.getElementById('team2display').textContent = team2total;
 
 document.getElementById('2plus1').onclick = addOne2;
 
 function addOne2() {
   team2total++;
+  var updatedTeam2Total = team2total;
+  sessionStorage.setItem('updatedTeam2Total', updatedTeam2Total);
+  var updatedTeam2Total = sessionStorage.getItem('updatedTeam2Total');
   document.getElementById('team2display').textContent = team2total;
 }
 
 document.getElementById('2plus2').onclick = addTwo2;
 
 function addTwo2() {
-  team2total = team2total + 2;
+  team2total += 2;
+  var updatedTeam2Total = team2total;
+  sessionStorage.setItem('updatedTeam2Total', updatedTeam2Total);
+  var updatedTeam2Total = sessionStorage.getItem('updatedTeam2Total');
   document.getElementById('team2display').textContent = team2total;
 }
 
@@ -142,24 +149,34 @@ document.getElementById('2minus1').onclick = minusOne2;
 
 function minusOne2() {
   team2total--;
+  var updatedTeam2Total = team2total;
+  sessionStorage.setItem('updatedTeam2Total', updatedTeam2Total);
+  var updatedTeam2Total = sessionStorage.getItem('updatedTeam2Total');
   document.getElementById('team2display').textContent = team2total;
 }
 
 // team 3 scoring
 
-var team3total = 0;
+var team3total = Number(sessionStorage.getItem('updatedTeam3Total') ? sessionStorage.getItem('updatedTeam3Total') : 0);
+document.getElementById('team3display').textContent = team3total;
 
 document.getElementById('3plus1').onclick = addOne3;
 
 function addOne3() {
   team3total++;
+  var updatedTeam3Total = team3total;
+  sessionStorage.setItem('updatedTeam3Total', updatedTeam3Total);
+  var updatedTeam3Total = sessionStorage.getItem('updatedTeam3Total');
   document.getElementById('team3display').textContent = team3total;
 }
 
 document.getElementById('3plus2').onclick = addTwo3;
 
 function addTwo3() {
-  team3total = team3total + 2;
+  team3total += 2;
+  var updatedTeam3Total = team3total;
+  sessionStorage.setItem('updatedTeam3Total', updatedTeam3Total);
+  var updatedTeam3Total = sessionStorage.getItem('updatedTeam3Total');
   document.getElementById('team3display').textContent = team3total;
 }
 
@@ -167,24 +184,34 @@ document.getElementById('3minus1').onclick = minusOne3;
 
 function minusOne3() {
   team3total--;
+  var updatedTeam3Total = team3total;
+  sessionStorage.setItem('updatedTeam3Total', updatedTeam3Total);
+  var updatedTeam3Total = sessionStorage.getItem('updatedTeam3Total');
   document.getElementById('team3display').textContent = team3total;
 }
 
 // team 4 scoring
 
-var team4total = 0;
+var team4total = Number(sessionStorage.getItem('updatedTeam4Total') ? sessionStorage.getItem('updatedTeam4Total') : 0);
+document.getElementById('team4display').textContent = team4total;
 
 document.getElementById('4plus1').onclick = addOne4;
 
 function addOne4() {
   team4total++;
+  var updatedTeam4Total = team4total;
+  sessionStorage.setItem('updatedTeam4Total', updatedTeam4Total);
+  var updatedTeam4Total = sessionStorage.getItem('updatedTeam4Total');
   document.getElementById('team4display').textContent = team4total;
 }
 
 document.getElementById('4plus2').onclick = addTwo4;
 
 function addTwo4() {
-  team4total = team4total + 2;
+  team4total += 2;
+  var updatedTeam4Total = team4total;
+  sessionStorage.setItem('updatedTeam4Total', updatedTeam4Total);
+  var updatedTeam4Total = sessionStorage.getItem('updatedTeam4Total');
   document.getElementById('team4display').textContent = team4total;
 }
 
@@ -192,9 +219,13 @@ document.getElementById('4minus1').onclick = minusOne4;
 
 function minusOne4() {
   team4total--;
+  var updatedTeam4Total = team4total;
+  sessionStorage.setItem('updatedTeam4Total', updatedTeam4Total);
+  var updatedTeam4Total = sessionStorage.getItem('updatedTeam4Total');
   document.getElementById('team4display').textContent = team4total;
 }
 
-//CREATE SESSION STORAGE FOR TEAM NAMES!!!
+//can't save text input if it's not submitted, so can't save that data
+
 //MAKE A CLEAR ALL DATA BUTTON!!!
-//Add black translucent status bar for safari like this (https://www.themarketingtechnologist.co/change-your-websites-address-bar-to-your-brand-colors/)
+//dangerous, could accidentally click it, especially on a small mobile screen -- decided not to

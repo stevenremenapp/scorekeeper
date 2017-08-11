@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="36x36" href="favicons/android-icon-36x36.png">
     <link rel="icon" type="image/png" sizes="57x57" href="favicons/apple-icon-57x57.png">
     <meta name="theme-color" content="gold">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
 
   </head>
@@ -32,8 +33,8 @@
       </div>
       <div class="sounds row">
         <div class="col-xs-12">
-          <audio src="correct.wav" id="rightClip"></audio>
-          <audio src="wrong.wav" id="wrongClip"></audio>
+          <audio src="right.mp3" id="rightClip"></audio>
+          <audio src="wrong.mp3" id="wrongClip"></audio>
             <div class="btn-group special" role="group">
               <button class="btn btn-primary plus2" type="button" id="right" onclick="rightSound()">Right Sound!</button>
               <button class="btn btn-danger" type="button" id="wrong" onclick="wrongSound()">Wrong Sound!</button>
@@ -43,7 +44,7 @@
       <div class="team row">
         <div class="col-xs-12">
           <p class="spanCenter"><span id="team1display">0</span></p>
-          <input class="input" type="text" placeholder="Enter team name here!">
+          <input class="input" id="team1name" type="text" placeholder="Enter team name here!">
           <div class="btn-group special" role="group">
             <button class="btn btn-primary plus1" type="button" id="1plus1">+1</button>
             <button class="btn btn-primary plus2" type="button" id="1plus2">+2</button>
