@@ -10,7 +10,7 @@ function clock() {
     if (!myTimer) {
     document.getElementById('countdownClip').play();
     myTimer = setInterval(myClock, 1000);
-    var i = 30;
+    var i = 25;
 
     function myClock() {
       document.getElementById('timer').textContent = i;
