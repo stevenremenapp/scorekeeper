@@ -10,9 +10,9 @@ function clock() {
     if (!myTimer) {
     myTimer = setInterval(myClock, 1000);
     var i = 25;
+    document.getElementById('countdownClip').play();
 
     function myClock() {
-      document.getElementById('countdownClip').play();
       document.getElementById('timer').textContent = i;
       i--;
       if (i < -1) {
