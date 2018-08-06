@@ -8,11 +8,11 @@ var myTimer;
 
 function clock() {
     if (!myTimer) {
-    document.getElementById('countdownClip').play();
     myTimer = setInterval(myClock, 1000);
     var i = 25;
 
     function myClock() {
+      document.getElementById('countdownClip').play();
       document.getElementById('timer').textContent = i;
       i--;
       if (i < -1) {
