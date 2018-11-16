@@ -1,0 +1,58 @@
+.container {
+  padding: 1%;
+  max-width: 900px;
+  width: 90%;
+}
+
+img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.countdown, .sounds {
+  margin: 2%;
+  padding: 2%;
+}
+
+.team {
+  outline: 2px solid black;
+  margin: 2%;
+  padding: 2%;
+}
+
+@font-face {
+  font-family: digital7Regular;
+  src: url(digital7Regular.ttf);
+}
+
+.spanCenter {
+  text-align: center;
+  font-family: digital7Regular, sans-serif;
+  font-size: 5rem;
+}
+
+.input[type=text] {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border: 2px solid gold;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.btn-group.special {
+  display: flex;
+}
+
+.special .btn {
+  flex: 1;
+}
+
+.plus1 {
+  background-color: #67a2d4;
+}
+
+.plus2 {
+  background-color: #346fa1;
+}
