@@ -24,8 +24,8 @@
           <p class="spanCenter"><span id="timer">--</span></p>
           <audio src="sounds/timerwithding25sec.mp3" id="countdownClip"></audio>
             <div class="btn-group special" role="group">
-              <button class="btn btn-primary plus2" type="button" onclick="clock()">Start timer</button>
-              <button class="btn btn-danger" type="button" onclick="stop()">Stop timer</button>
+              <button class="btn btn-primary" type="button" id="start-timer">Start timer</button>
+              <button class="btn btn-danger" type="button" id="stop-timer">Stop timer</button>
             </div>
         </div>
       </div>
@@ -34,19 +34,20 @@
           <audio src="sounds/right.mp3" id="rightClip"></audio>
           <audio src="sounds/wrong.mp3" id="wrongClip"></audio>
             <div class="btn-group special" role="group">
-              <button class="btn btn-primary plus2" type="button" id="right" onclick="rightSound()">Right Sound!</button>
-              <button class="btn btn-danger" type="button" id="wrong" onclick="wrongSound()">Wrong Sound!</button>
+              <button class="btn btn-primary" type="button" id="right">Right Sound!</button>
+              <button class="btn btn-danger" type="button" id="wrong">Wrong Sound!</button>
             </div>
         </div>
       </div>
+      <div id="score-container">
       <div class="team row">
         <div class="col-xs-12">
           <p class="spanCenter"><span id="team1display">0</span></p>
           <input class="input" id="team1name" type="text" placeholder="Enter team name here!">
-          <div class="btn-group special" role="group">
-            <button class="btn btn-primary plus1" type="button" id="1plus1" data-team="team1">+1</button>
-            <button class="btn btn-primary plus2" type="button" id="1plus2">+2</button>
-            <button class="btn btn-danger" type="button" id="1minus1">-1</button>
+          <div class="btn-group special" role="group" data-team="team1">
+            <button class="btn btn-primary plus1" type="button">+1</button>
+            <button class="btn btn-primary plus2" type="button">+2</button>
+            <button class="btn btn-danger minus1" type="button">-1</button>
           </div>
         </div>
       </div>
@@ -54,10 +55,10 @@
         <div class="col-xs-12">
           <p class="spanCenter"><span id="team2display">0</span></p>
           <input class="input" type="text" placeholder="Enter team name here!">
-          <div class="btn-group special" role="group">
-            <button class="btn btn-primary plus1" type="button" id="2plus1">+1</button>
-            <button class="btn btn-primary plus2" type="button" id="2plus2">+2</button>
-            <button class="btn btn-danger" type="button" id="2minus1">-1</button>
+          <div class="btn-group special" role="group" data-team="team2">
+            <button class="btn btn-primary plus1" type="button">+1</button>
+            <button class="btn btn-primary plus2" type="button">+2</button>
+            <button class="btn btn-danger minus1" type="button">-1</button>
         </div>
       </div>
     </div>
@@ -65,10 +66,10 @@
         <div class="col-xs-12">
           <p class="spanCenter"><span id="team3display">0</span></p>
           <input class="input" type="text" placeholder="Enter team name here!">
-          <div class="btn-group special" role="group">
-            <button class="btn btn-primary plus1" type="button" id="3plus1">+1</button>
-            <button class="btn btn-primary plus2" type="button" id="3plus2">+2</button>
-            <button class="btn btn-danger" type="button" id="3minus1">-1</button>
+          <div class="btn-group special" role="group" data-team="team3">
+            <button class="btn btn-primary plus1" type="button">+1</button>
+            <button class="btn btn-primary plus2" type="button">+2</button>
+            <button class="btn btn-danger minus1" type="button">-1</button>
           </div>
         </div>
       </div>
@@ -76,13 +77,14 @@
         <div class="col-xs-12">
           <p class="spanCenter"><span id="team4display">0</span></p>
           <input class="input" type="text" placeholder="Enter team name here!">
-          <div class="btn-group special" role="group">
-            <button class="btn btn-primary plus1" type="button" id="4plus1">+1</button>
-            <button class="btn btn-primary plus2" type="button" id="4plus2">+2</button>
-            <button class="btn btn-danger" type="button" id="4minus1">-1</button>
+          <div class="btn-group special" role="group" data-team="team4">
+            <button class="btn btn-primary plus1" type="button">+1</button>
+            <button class="btn btn-primary plus2" type="button">+2</button>
+            <button class="btn btn-danger minus1" type="button">-1</button>
           </div>
         </div>
       </div>
+    </div>
     </div>
 
     <script type="text/javascript" src="script.js"></script>
