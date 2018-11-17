@@ -75,12 +75,23 @@ wrongSoundBtn.addEventListener('click', function() {
 //handle scoring
 
 function renderScores() {
-  document.getElementById('team1display').textContent = scores['team1'];
-  document.getElementById('team2display').textContent = scores['team2'];
-  document.getElementById('team3display').textContent = scores['team3'];
-  document.getElementById('team4display').textContent = scores['team4'];
+  // document.getElementById('team1display').textContent = scores['team1'];
+  // document.getElementById('team2display').textContent = scores['team2'];
+  // document.getElementById('team3display').textContent = scores['team3'];
+  // document.getElementById('team4display').textContent = scores['team4'];
+
+  // create an array of team names
+  let teams = ['team1', 'team2', 'team3', 'team4'];
+  let i = 0;
+  let teamsArrayLength = teams.length;
+  while (i < teamsArrayLength) {
+    let team = teams[i];
+    document.getElementById(team + 'display').textContent = scores[team];
+    i++;
+    }
 }
 
+//initial score display
 renderScores();
 
 let scoreContainer = document.getElementById('score-container');
@@ -90,6 +101,7 @@ scoreContainer.addEventListener('click', function(event) {
   let teamId = event.target.parentNode.dataset.team;
   teamScore = teamId + 'score';
 
+  //determine button pressed and take appropriate action
   if (event.target.classList.contains('plus1')) {
     addOne(teamId);
   }
@@ -99,6 +111,8 @@ scoreContainer.addEventListener('click', function(event) {
   if (event.target.classList.contains('minus1')) {
     minusOne(teamId);
   }
+  //display scores
+  renderScores();
 })
 
 function addOne(teamId) {
@@ -106,19 +120,15 @@ function addOne(teamId) {
   scores[teamId] += 1;
   //store into local storage
   sessionStorage.setItem(teamScore, scores[teamId]);
-  //display score
-  renderScores();
 }
 
 function addTwo(teamId) {
   scores[teamId] += 2;
   sessionStorage.setItem(teamScore, scores[teamId]);
-  renderScores();
 }
 
 
 function minusOne(teamId) {
   scores[teamId] -= 1;
   sessionStorage.setItem(teamScore, scores[teamId]);
-  renderScores();
 }
