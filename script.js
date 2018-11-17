@@ -75,12 +75,6 @@ wrongSoundBtn.addEventListener('click', function() {
 //handle scoring
 
 function renderScores() {
-  // document.getElementById('team1display').textContent = scores['team1'];
-  // document.getElementById('team2display').textContent = scores['team2'];
-  // document.getElementById('team3display').textContent = scores['team3'];
-  // document.getElementById('team4display').textContent = scores['team4'];
-
-  // create an array of team names
   let teams = ['team1', 'team2', 'team3', 'team4'];
   let i = 0;
   let teamsArrayLength = teams.length;
